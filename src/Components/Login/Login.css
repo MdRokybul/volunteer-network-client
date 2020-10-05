@@ -1,0 +1,22 @@
+.login-container{
+    width: 40%;
+    height: 300px;
+    box-shadow: 2px 2px 10px gray;
+}
+.google-style{
+    border: 1px solid black;
+    padding: 0px 20px;
+    border-radius: 31px;
+    cursor: pointer;
+}
+.google-style p{
+    margin: 0;
+    font-weight: 700;
+    font-size: x-large;
+}
+
+.google-style img{
+    height: 40px;
+    margin: auto -18px;
+    margin-right: 50px;
+}

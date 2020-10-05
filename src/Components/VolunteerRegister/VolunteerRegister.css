@@ -1,0 +1,19 @@
+.register-style{
+    margin-top:10%;
+    padding: 25px;
+    box-shadow: 2px 2px 10px gray;
+}
+
+.register-btn-style{
+    width: -webkit-fill-available;
+}
+
+.react-datepicker-wrapper{
+    width: 100%;
+}
+.react-datepicker__input-container{
+    width: 100%;
+}
+.date-style{
+    width: 100%;
+}
