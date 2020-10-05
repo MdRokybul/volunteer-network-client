@@ -21,6 +21,7 @@ const EventList = () => {
                 {
                     singleVolunteer.map(volunteer => <IndividualEventList individualVolunteer={volunteer}></IndividualEventList>)
                 }
+
             </Row>
         </Container>
     );
