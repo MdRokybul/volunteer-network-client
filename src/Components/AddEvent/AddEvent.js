@@ -74,9 +74,9 @@ const AddEvent = () => {
                     </Form.Group>
                 </Form.Row>
                 <div className="text-right">
-                    <a href="/admin">
+                    {/* <a href="/admin"> */}
                         <Button variant="primary" onClick={handleAddEvent}>Submit</Button>
-                    </a>
+                    {/* </a> */}
                 </div>
             </Form>
         </Container>
