@@ -9,7 +9,7 @@ const Admin = () => {
     const [volunteer, setVolunteer] = useState([]);
     const [adminPanel, setAdminPanel] = useState(true)
     useEffect(() => {
-        fetch('http://localhost:5000/volunteerlist')
+        fetch('https://damp-beyond-64004.herokuapp.com/volunteerlist')
             .then(res => res.json())
             .then(data => setVolunteer(data))
     }, [])

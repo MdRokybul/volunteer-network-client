@@ -1,16 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Button, Card, CardDeck, Col } from 'react-bootstrap';
+import { UserContext } from '../../App';
 
 const IndividualEventList = (props) => {
     const { _id, title, description } = props.individualVolunteer;
 
     const deleteVolunteer = (id) => {
-        fetch('http://localhost:5000/deleteVolunteer/'+id, {
+        fetch('https://damp-beyond-64004.herokuapp.com/deleteVolunteer/'+id, {
             method: 'DELETE',
         })
         .then(res => res.json())
         .then(data => console.log(data))
     }
+
+
+    //testing function
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [singleVolunteer, setSingleVolunteer] = useState([])
+
+    useEffect(() => {
+        fetch('https://damp-beyond-64004.herokuapp.com/volunteer?email=' + loggedInUser.email)
+            .then(res => res.json())
+            .then(data => setSingleVolunteer(data))
+    }, [])
     return (
         <Col className="col-md-6">
             <CardDeck>
@@ -19,12 +31,10 @@ const IndividualEventList = (props) => {
                     <Card.Body>
                         <Card.Title> {title} </Card.Title>
                         <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
+                            {description}
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
                         <Button onClick={() => deleteVolunteer(_id)}>Cancel</Button>
                     </Card.Footer>
                 </Card>

@@ -5,7 +5,7 @@ const VolunteerList = (props) => {
     const volunteerList = props.singleVolunteer;
 
     const handleDelete = (id) => {
-        fetch('http://localhost:5000/deleteVolunteer/'+id, {
+        fetch('https://damp-beyond-64004.herokuapp.com/deleteVolunteer/'+id, {
             method: 'DELETE',
         })
         .then(res => res.json())

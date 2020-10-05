@@ -1,5 +1,4 @@
 import React, { createContext, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
@@ -14,7 +13,6 @@ import Login from './Components/Login/Login';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import EventList from './Components/EventList/EventList';
 import Admin from './Components/Admin/Admin';
-import VolunteerRegistration from './Components/VolunteerRegistration/VolunteerRegistration';
 
 export const EventContext = createContext();
 export const UserContext = createContext();

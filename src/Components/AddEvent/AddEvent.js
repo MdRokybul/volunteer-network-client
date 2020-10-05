@@ -34,7 +34,7 @@ const AddEvent = () => {
 
     const handleAddEvent = () => {
         const newEvent = { ...event };
-        fetch('http://localhost:5000/addEvent', {
+        fetch('https://damp-beyond-64004.herokuapp.com/addEvent', {
             method: 'POST',
             body: JSON.stringify(newEvent),
             headers: { 'Content-Type': 'application/json' }

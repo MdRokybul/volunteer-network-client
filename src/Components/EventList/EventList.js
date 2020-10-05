@@ -8,7 +8,7 @@ const EventList = () => {
     const [singleVolunteer, setSingleVolunteer] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/volunteer?email=' + loggedInUser.email)
+        fetch('https://damp-beyond-64004.herokuapp.com/volunteer?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setSingleVolunteer(data))
     }, [])

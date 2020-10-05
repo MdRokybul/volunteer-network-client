@@ -2,12 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { EventContext, MatchedItem, UserContext } from '../../App';
-import data from '../../FakeData/FakeData';
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import './VolunteerRegister.css';
-import Testing from '../Testing/Testing';
 
 const VolunteerRegister = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -34,7 +32,7 @@ const VolunteerRegister = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/eventlist')
+        fetch('https://damp-beyond-64004.herokuapp.com/eventlist')
             .then(res => res.json())
             .then(data => setEventTitle(data))
     }, []);
@@ -45,17 +43,6 @@ const VolunteerRegister = () => {
     }, [eventTitle]);
 
     const handleBlur = (e) => {
-        // if (e.target.name === 'fullName') {
-        //     const user = {...loggedInUser};
-        //     const newVolunteer = {...volunteer}
-        //     newVolunteer.fullName = e.target.value;
-        //     setVolunteer(newVolunteer);
-        // }
-        // if (e.target.name === 'email') {
-        //     const newVolunteer = {...volunteer}
-        //     newVolunteer.email = e.target.value;
-        //     setVolunteer(newVolunteer);
-        // }
         if (e.target.name === 'description') {
             const user = { ...loggedInUser };
             const newVolunteer = { ...volunteer };
@@ -77,7 +64,7 @@ const VolunteerRegister = () => {
 
     const handleSubmit = () => {
         const newVolunteer = { ...volunteer }
-        fetch('http://localhost:5000/addVolunteer', {
+        fetch('https://damp-beyond-64004.herokuapp.com/addVolunteer', {
             method: 'POST',
             body: JSON.stringify(newVolunteer),
             headers: { 'Content-Type': 'application/json' }
@@ -128,11 +115,7 @@ const VolunteerRegister = () => {
                         </Form>
                     </div>
                 </Col>
-
             </Row>
-            {/* {
-                                    eventTitle.map(etitle => <Testing etitle={etitle}></Testing>)
-                                } */}
         </Container>
     );
 };
