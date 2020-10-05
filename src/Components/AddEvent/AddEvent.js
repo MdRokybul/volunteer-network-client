@@ -43,8 +43,13 @@ const AddEvent = () => {
             .then(data => {
                 console.log(data);
             })
-        newEvent.title = "";
-        setEvent(newEvent);
+        Array.from(document.querySelectorAll("input")).forEach(
+            input => input.value = ""
+        )
+        Array.from(document.querySelectorAll("textarea")).forEach(
+            input => input.value = ""
+        )
+
     }
     return (
         <Container>
@@ -53,7 +58,7 @@ const AddEvent = () => {
                 <Form.Row>
                     <Form.Group as={Col} controlId="formGridTitle">
                         <Form.Label>Event Title</Form.Label>
-                        <Form.Control onBlur={handleBlur} type="text" placeholder="Enter Title" name="title" />
+                        <Form.Control onBlur={handleBlur} type="text"  placeholder="Enter Title" name="title" />
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridDate">
